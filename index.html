@@ -6,6 +6,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Clownflix</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+  </script>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -51,9 +55,23 @@
 
       <nav id="navbar" class="navbar">
         <ul>
+          <input type="text" placeholder="Search Anime..." id = "clownsearch" working = "nah bro" value = "">
+          <script>
+            document.getElementById("clownsearch").addEventListener("change", function() {
+              query = document.getElementById("clownsearch")['value'];
+              if(query != "") {
+                //do stuff
+                if (query.toLowerCase().indexOf("genre:") == 0) {
+                  createpage("https://www26.gogoanimes.tv/genre/" + query.slice("genre:".length), query.slice("genre:".length).toUpperCase())
+                } else {
+                  createpage("https://www26.gogoanimes.tv//search.html?keyword=" + query, ('Results for "' + query + '"'));
+                }
+              };
+            });
+          </script>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#browse">Browse</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
@@ -90,7 +108,7 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Welcome to <span>ClownFlix</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Home of primitive monke video content, the most advanced monke techonolgy avalible.</p>
+          <p class="animate__animated fanimate__adeInUp">Home of primitive monke video content, the most advanced monke techonolgy available.</p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
@@ -176,739 +194,80 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container">
 
-        <ul class="nav nav-tabs row d-flex">
-          <li class="nav-item col-3" data-aos="zoom-in">
-            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-              <i class="ri-gps-line"></i>
-              <h4 class="d-none d-lg-block">Modi sit est dela pireda nest</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
-              <i class="ri-body-scan-line"></i>
-              <h4 class="d-none d-lg-block">Unde praesenti mara setra le</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
-              <i class="ri-sun-line"></i>
-              <h4 class="d-none d-lg-block">Pariatur explica nitro dela</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="300">
-            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
-              <i class="ri-store-line"></i>
-              <h4 class="d-none d-lg-block">Nostrum qui dile node</h4>
-            </a>
-          </li>
-        </ul>
-
-        <div class="tab-content" data-aos="fade-up">
-          <div class="tab-pane active show" id="tab-1">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                <p class="font-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-1.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab-2">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Neque exercitationem debitis soluta quos debitis quo mollitia officia est</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="font-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-2.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab-3">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                </ul>
-                <p class="font-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-3.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab-4">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="font-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-4.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
+    <!-- ======= Browse Section ======= -->
+    <section id="browse" class="cta">
+      <div id = "videobox" class = "videobox" style = "border-style: solid; position: relative; top: 0x; left: 200px; width: 0px; height: 0px; visibility: hidden;">
+        <h3 id = "clickable name" style = "cursor: pointer;"><h3>
+        <h5 id = "back to clownflix" style = "color:#FE710B; cursor: pointer;">Back to ClownFlix</h1>
+        <iframe id = "current video" title = "current video" allowfullscreen = "true" scrolling="no" src = "https://i.pinimg.com/originals/aa/51/bd/aa51bd72926e11f7006369f6d211a668.gif" style = "position: relative; top: 0px; left: 0px; width: 900px; height: 500px;"></iframe>
+        <div id = "previous button" style = "position: relative; width: 50px; height: 10px; top: 50px; left: 20px"> 
+          <h6 id = "previous episode" working = "nah bro" style="color:orange; cursor: pointer; position: relative;">Previous Episode</h6>
         </div>
 
+        <div id = "next button" style = "position: relative; width: 50px; height: 10px; top: 40px; left: 820px">
+          <h6 id = "next episode" style="color:orange; cursor: pointer; position: relative;">Next Episode</h6>
+        </div>
+        </div>
       </div>
-    </section><!-- End Features Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container">
-
+      <div class="container" id = "main container">
         <div class="row" data-aos="zoom-out">
           <div class="col-lg-9 text-center text-lg-start">
-            <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3 id = "current page">Popular</h3>
+            <p id = "show name">Trending Now.</p>
+            <p id = "show genres" style="color:#FE710B;"></p>
+            <p id = "show text"></p>
+            <p id = "watch now" style="color:orange; cursor: pointer;"></p>
+            <script>
+              document.getElementById("watch now").addEventListener("click", function () {
+                window.episode = 1
+                name = "https://www26.gogoanimes.tv/" + document.getElementById("show name").innerHTML.replace(/[^a-zA-Z0-9 ]/g, '').split(" ").join("-") + "-episode-" + episode;
+                console.log(name)
+                loadvideo(name)
+                this.style = "color:orange; cursor: pointer; visibility: hidden";
+              });
+              document.getElementById("next episode").addEventListener("click", function () {
+                window.episode += 1
+                name = "https://www26.gogoanimes.tv/" + document.getElementById("show name").innerHTML.replace(/[^a-zA-Z0-9 ]/g, '').split(" ").join("-") + "-episode-" + episode;
+                //console.log(name)
+                loadvideo(name)
+              });
+              document.getElementById("previous episode").addEventListener("click", function () {
+                if (document.getElementById("previous episode")['working'] == "yea bro") {
+                  window.episode -= 1
+                  name = "https://www26.gogoanimes.tv/" + document.getElementById("show name").innerHTML.replace(/[^a-zA-Z0-9 ]/g, '').split(" ").join("-") + "-episode-" + episode;
+                  //console.log(name)
+                  loadvideo(name)
+                };
+              });
+              document.getElementById("back to clownflix").addEventListener("click", function () {
+                location.reload(); //might change later
+              });
+            </script>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="cta-btn align-middle" href="#" id = "see more">See More</a>
           </div>
         </div>
-
       </div>
-    </section><!-- End Cta Section -->
+    </section><!-- End Browse Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
 
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Services</h2>
-          <p>What we do offer</p>
-        </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="zoom-in-left">
-              <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
-              <div class="icon"><i class="bi bi-book" style="color: #e9bf06;"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
-              <div class="icon"><i class="bi bi-card-checklist" style="color: #3fcdc7;"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
-              <div class="icon"><i class="bi bi-binoculars" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-              <div class="icon"><i class="bi bi-globe" style="color: #d6ff22;"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="500">
-              <div class="icon"><i class="bi bi-clock" style="color: #4680ff;"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Portfolio</h2>
-          <p>What we've done</p>
-        </div>
-
-        <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
-        </ul>
-
-        <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Testimonials</h2>
-          <p>What they are saying about us</p>
-        </div>
-
-        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Pricing</h2>
-          <p>Our Competing Prices</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="box" data-aos="zoom-in">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-            <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>F.A.Q</h2>
-          <p>Frequently Asked Questions</p>
-        </div>
-
-        <ul class="faq-list">
-
-          <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
-              </p>
-            </div>
-          </li>
-
-        </ul>
-
-      </div>
-    </section><!-- End F.A.Q Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Team</h2>
-          <p>Our Hardworking Team</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Team Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
-        </div>
-
-        <div class="row mt-5">
-
-          <div class="col-lg-4" data-aos="fade-right">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Selecao</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <h3>ClownFlix</h3>
+      <p>Your last resort</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Selecao</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>ClownFlix</span></strong>. Copyrights and trademarks for the anime, and other promotional materials are held by their respective owners and their use is allowed under the fair use clause of the Copyright Law.
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -919,6 +278,360 @@
       </div>
     </div>
   </footer><!-- End Footer -->
+
+
+
+  <!-- test image script-->
+    <script src = "js/bundle.js"></script>
+    <script>
+      window.cache = new Map();
+
+      function bigboi(x) {
+        if (x["src"].indexOf("https://gogocdn.net") == 0) {
+          document.getElementById("see more").innerHTML = "Episodes"
+        }
+        if (x['src'].indexOf("https://static.thenounproject.com/") == 0) {
+          x.style.width = "52px";
+          x.style.height = "52px";
+        }
+        else {
+          x.style.width = "115px";
+          x.style.height = "195px";
+        };
+        seriesname = document.getElementById("show name");
+        if (x.hasAttribute("alt")) {
+          if (seriesname.hasAttribute("showing-active")) {
+            if (seriesname['showing-active'] != "yea bro") {
+              seriesname.innerHTML = x['alt'];
+            } else {
+            };
+          } else {
+            //create it
+            att = document.createAttribute("showing-active");
+            att.value = "nah bro";
+            seriesname.setAttributeNode(att);
+            seriesname.innerHTML = x['alt'];
+          }
+          
+        };
+      };
+      async function previewtext(x) {
+        if (x["src"].indexOf("https://gogocdn.net") == 0) {
+          //big brain time
+          if (window.cache.has(x['alt'])) {
+            seriesname["showing-active"] = "yea bro";
+            genres = await gogogenres(window.cache[x['alt']]);
+            genres.shift();
+            seriesname.innerHTML = x['alt']
+            document.getElementById("show genres").innerHTML = "<br>" + genres.join(", ");
+            document.getElementById("show text").innerHTML = "<br>Other Names: " + gogonames(window.cache[x['alt']]) + "<br>" + gogosummary(window.cache[x['alt']]);
+          } else {
+            //we requesting,,,
+            if (x["src"].indexOf("https://gogocdn.net/images/anime/") == 0) {
+              pizzaslice = "https://www26.gogoanimes.tv/category/" + x['src'].slice("https://gogocdn.net/images/anime/".length, x['src'].length - 4);
+            };
+            if (x["src"].indexOf("https://gogocdn.net/cover/") == 0) {
+              pizzaslice = "https://www26.gogoanimes.tv/category/" + x['src'].slice("https://gogocdn.net/cover/".length, x['src'].length - 4);
+            }; 
+            if (x["src"].indexOf("https://gogocdn.net/images/upload/") == 0) {
+              pizzaslice = "https://www26.gogoanimes.tv/category/" + x['src'].slice("https://gogocdn.net/images/upload/".length, x['src'].length - 4);
+            };
+            request = await axiosget(pizzaslice);
+            window.cache[x['alt']] = request;
+            seriesname["showing-active"] = "yea bro";
+            genres = await gogogenres(request);
+            genres.shift();
+            seriesname.innerHTML = x['alt']
+            document.getElementById("show genres").innerHTML = "<br>" + genres.join(", ")
+            document.getElementById("show text").innerHTML = "<br>Other Names: " + gogonames(request) + "<br>" + gogosummary(request) + "Status: " + gogostatus(request) + "<br> Episodes: " + gogoepisodes(request);
+            document.getElementById("watch now").innerHTML = "Watch Now."
+          };
+        };
+      }
+      function smol(x) {
+        if (seriesname['showing-active'] != "yea bro") {
+          document.getElementById("see more").innerHTML = "See More";
+          document.getElementById("show text").innerHTML = ""
+          document.getElementById("show genres").innerHTML = ""
+          document.getElementById("watch now").innerHTML = ""
+        };
+        if (x['src'].indexOf("https://static.thenounproject.com/") == 0) {
+          x.style.width = "50px";
+          x.style.height = "50px";
+        }
+        else {
+          x.style.width = "110px";
+          x.style.height = "190px";
+        };
+      };
+
+      function arrowpress(x, currentimages) {
+        seriesname = document.getElementById("show name");
+        if (seriesname.hasAttribute("showing-active")) {
+          document.getElementById("show text").innerHTML = ""
+          document.getElementById("show genres").innerHTML = ""
+          document.getElementById("watch now").innerHTML = ""
+          seriesname.innerHTML = "Trending Now."
+          seriesname["showing-active"] = "nah bro";
+
+        } else {
+          //create it
+          seriesname.innerHTML = "Trending Now."
+          att = document.createAttribute("showing-active");
+          att.value = "nah bro";
+          seriesname.setAttributeNode(att);
+        }
+        var mathstuff = (Math.round(window.imagesraw.length / 10) - 1)
+        if (x.hasAttribute("alt")) {
+          if (x["alt"] == "Next!") {
+            if (window.worldcurrent < mathstuff) {
+              window.worldcurrent += 1;
+            };
+          };
+          if (x["alt"] == "Previous!") {
+            if (window.worldcurrent > 0) {
+              window.worldcurrent -= 1;
+            };
+          };
+          var i;
+          var actual = 0;
+          c = currentimages.children;
+          for (i = (window.worldcurrent * 10); i < ((window.worldcurrent * 10 ) + 10); i++) {
+            if (window.imagesraw[i] != undefined) {
+              if (window.imagesraw[i].indexOf("https://gogocdn.net/images/anime/") == 0) {
+                name = window.imagesraw[i].slice("https://gogocdn.net/images/anime/".length, window.imagesraw[i].length - 4).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+              };
+              if (window.imagesraw[i].indexOf("https://gogocdn.net/cover/") == 0) {
+                name = window.imagesraw[i].slice("https://gogocdn.net/cover/".length, window.imagesraw[i].length - 4).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+              };
+              if (window.imagesraw[i].indexOf("https://gogocdn.net/images/upload/") == 0) {
+                name = window.imagesraw[i].slice("https://gogocdn.net/images/upload/".length, window.imagesraw[i].length - 4).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+              };
+              c[actual]['alt'] = window.totalimages[i];
+              c[actual]['src'] = window.imagesraw[i];
+            } else {
+              c[actual]['alt'] = ""
+              c[actual]['src'] = "https://upload.wikimedia.org/wikipedia/commons/4/48/BLANK_ICON.png";
+            }
+            actual += 1
+          }
+        };
+        loadpage(window.currentrequest);
+      };
+
+
+      async function loadvideo(webtarget) {
+        //https://storage.googleapis.com/extended-argon-306402/IWFU5AXST5D/23a_1614780896_146104.mp4
+        document.getElementById("current video")["src"] = "https://i.pinimg.com/originals/aa/51/bd/aa51bd72926e11f7006369f6d211a668.gif"
+        if (window.episode > 1) {
+          document.getElementById("previous episode")["working"] = "yea bro";
+        } else {
+          document.getElementById("previous episode")["working"] = "nah bro";
+        }
+        att = document.createAttribute("style");
+        att.value = "visibility: hidden;";
+        document.getElementById("arrowbox").setAttributeNode(att);
+        att = document.createAttribute("style");
+        att.value = "visibility: hidden;";
+        document.getElementById("main container").setAttributeNode(att);
+        videobox = document.getElementById("videobox");
+        document.getElementById("clickable name").innerHTML = document.getElementById("show name").innerHTML + " (Episode " + episode + ")";
+        videobox["style"] ="position: relative; top: 200px; left: 200px; width: 900px; height: 500px; visibility: visible";
+        vid = document.getElementById("current video")
+        result = await axiosget(webtarget);
+        urlgot = await getvideo(result);
+        if (vid.hasAttribute("src")) {
+          vid['src'] = urlgot;
+        } else {
+          att = document.createAttribute("src");
+          att.value = urlgot;
+          vid.setAttributeNode(att);
+        }
+      }
+
+      async function loadpage(target) {
+        mathstuff = (Math.round(window.imagesraw.length / 10))
+        window.currentpage += 1
+        request = await axiosget(target + "&page=" + window.currentpage);
+        images = await getimages(request);
+        images.shift();
+        images.pop();
+        images.shift();
+        images.pop();
+
+        if (images.length != 0) {
+          imagesalts = await getalts(request);
+          imagesalts.shift();
+          imagesalts.pop();
+          imagesalts.shift();
+          imagesalts.pop();
+          var i;
+          actual = 0
+          //starts loooop
+          for (i = (mathstuff * 10); i < ((mathstuff * 10 ) + 10); i++) {
+            window.imagesraw[i] = images[actual];
+            console.log(window.imagesraw[i])
+            console.log(i)
+            window.totalimages[i] = imagesalts[actual];
+            actual += 1;
+          };
+        } else {
+          window.currentpage -= 1
+        }
+      }
+
+      async function createpage(target, title){
+        //no idea rn
+        document.getElementById("current page").innerHTML = title
+        request = await axiosget(target)
+        window.currentrequest = target
+        window.worldcurrent = 0
+        window.currentpage = 1;
+        images = await getimages(request);
+        images.shift();
+        images.pop();
+        images.shift();
+        images.pop();
+        mathstuff = (Math.round(images.length / 10))
+        window.imagesraw = images
+
+        imagesalts = await getalts(request);
+        imagesalts.shift();
+        imagesalts.pop();
+        imagesalts.shift();
+        imagesalts.pop();
+        window.totalimages = imagesalts
+        var i;
+
+        c = document.getElementById("seriesbox").children;
+        for (i = 0; i < 10; i++) {
+          if (i < images.length) {
+            c[i]['alt'] = imagesalts[i];
+            c[i]['src'] = images[i];
+          } else {
+            c[i]['alt'] = ""
+            c[i]['src'] = "https://upload.wikimedia.org/wikipedia/commons/4/48/BLANK_ICON.png";
+          };
+        };
+      };
+
+      async function loadmain(){
+          var part = 0;
+          window.currentpage = 1;
+          window.currentrequest = "https://www26.gogoanimes.tv/popular.html";
+          request = await axiosget(window.currentrequest);
+          images = await getimages(request);
+          images.shift();
+          images.pop();
+          images.shift();
+          images.pop();
+          section = document.createElement("div");
+          att = document.createAttribute("id");
+          att.value = "seriesbox";
+          section.setAttributeNode(att)
+          document.getElementById("main container").appendChild(section)
+          var i
+          var current = 0;
+          window.worldcurrent = current;
+          window.imagesraw = images
+          imagesalts = await getalts(request);
+          imagesalts.shift();
+          imagesalts.pop();
+          imagesalts.shift();
+          imagesalts.pop();
+          window.totalimages = imagesalts
+          //starts loooop
+          for (i = (window.worldcurrent * 10); i < ((window.worldcurrent * 10 ) + 10); i++) {
+            if (images[i].indexOf("https://gogocdn.net/images/anime/") == 0) {
+              name = images[i].slice("https://gogocdn.net/images/anime/".length, images[i].length - 4).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+            };
+            if (images[i].indexOf("https://gogocdn.net/cover/") == 0) {
+              name = images[i].slice("https://gogocdn.net/cover/".length, images[i].length - 4).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+            };
+            if (images[i].indexOf("https://gogocdn.net/images/upload/") == 0) {
+              name = images[i].slice("https://gogocdn.net/images/upload/".length, images[i].length - 4).replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+            };
+            var x = document.createElement("img");
+            att = document.createAttribute("src");
+            att.value = images[i];
+            x.setAttributeNode(att);
+            att = document.createAttribute("alt");
+            att.value = imagesalts[i];
+            x.setAttributeNode(att)
+            x.width = 110;
+            x.height = 190;
+            part += 1;
+            att = document.createAttribute("style");
+            att.value = "cursor: pointer; margain-left: " + (part * 110) + "px";
+            x.setAttributeNode(att)
+            if (images[i].indexOf("https://gogocdn.net/cover/") == 0) {
+              att = document.createAttribute("onmouseover")
+              att.value = "bigboi(this)";
+              x.setAttributeNode(att);
+              att = document.createAttribute("onmouseout");
+              att.value = "smol(this)";
+              x.setAttributeNode(att);
+            };
+            att = document.createAttribute("onclick");
+            att.value = "previewtext(this)";
+            x.setAttributeNode(att);
+            section.appendChild(x);
+          }
+          section2 = document.createElement("div");
+          att = document.createAttribute("id");
+          att.value = "arrowbox";
+          section2.setAttributeNode(att);
+          document.getElementById('browse').appendChild(section2);
+          leftarrow = document.createElement("img");
+          rightarrow = document.createElement("img");
+          att = document.createAttribute("src"); //set first image
+          att.value = "https://static.thenounproject.com/png/74837-200.png";
+          leftarrow.setAttributeNode(att);
+          vibes = document.createAttribute("style"); //set first style
+          vibes.value = "position: relative; top: -70px; left: 20px; width: 50px; height: 50px; cursor: pointer;";
+          leftarrow.setAttributeNode(vibes);
+          att = document.createAttribute("onmouseover");
+          att.value = "bigboi(this)";
+          leftarrow.setAttributeNode(att);
+          att = document.createAttribute("onmouseout");
+          att.value = "smol(this)";
+          leftarrow.setAttributeNode(att);
+          att = document.createAttribute("alt");
+          att.value = "Previous!";
+          leftarrow.setAttributeNode(att);
+          leftarrow.addEventListener("click", function() {
+              arrowpress(this, document.getElementById("seriesbox"))
+          });
+
+
+          att = document.createAttribute("src"); //second image
+          att.value = "https://static.thenounproject.com/png/74838-200.png";
+          rightarrow.setAttributeNode(att);
+          vibes = document.createAttribute("style"); //second style
+          vibes.value = "position: relative; top: -70px; left: 1200px; width: 50px; height: 50px; cursor: pointer;";
+          rightarrow.setAttributeNode(vibes);
+          att = document.createAttribute("onmouseover");
+          att.value = "bigboi(this)";
+          rightarrow.setAttributeNode(att);
+          att = document.createAttribute("onmouseout");
+          att.value = "smol(this)";
+          rightarrow.setAttributeNode(att);
+          att = document.createAttribute("alt");
+          att.value = "Next!";
+          rightarrow.setAttributeNode(att);
+          rightarrow.addEventListener("click", function() {
+              arrowpress(this, document.getElementById("seriesbox"))
+          });
+
+
+
+          section2.appendChild(leftarrow); //add the left arrow
+          section2.appendChild(rightarrow); //add the right arrow
+      };
+      loadmain();
+    </script>
+
+
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
